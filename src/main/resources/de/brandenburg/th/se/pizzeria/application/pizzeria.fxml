@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane prefHeight="620.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="de.brandenburg.th.se.pizzeria.application.controller.PizzeriaController">
+    <tabs>
+        <Tab fx:id="tabSpeisekarte" closable="false" text="N/A">
+            <content>
+                <fx:include source="speisekarte.fxml"/>
+            </content>
+        </Tab>
+        <Tab fx:id="tabGericht" closable="false" text="N/A">
+            <content>
+                <fx:include source="gericht.fxml"/>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
+

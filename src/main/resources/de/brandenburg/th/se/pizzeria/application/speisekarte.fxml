@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.brandenburg.th.se.pizzeria.application.controller.SpeisekarteController">
+    <HBox layoutY="13.0" prefHeight="587.0" prefWidth="800.0">
+        <VBox prefHeight="587.0" prefWidth="285.0">
+            <Text text="Speisekarten" wrappingWidth="114.353515625">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <VBox.margin>
+                    <Insets left="10.0" />
+                </VBox.margin>
+            </Text>
+            <ListView fx:id="auswahlSpeisekarten" prefHeight="198.0" prefWidth="265.0">
+                <VBox.margin>
+                    <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                </VBox.margin>
+            </ListView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="198.0">
+                <Button fx:id="btnLadeSpeisekarten" onAction="#ladeSpeisekarten" text="aktualisieren" />
+                <Button fx:id="btnLoeschSpeisekarten" onAction="#loescheSpeisekarten" text="lösche Auswahl">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></Button>
+            <opaqueInsets>
+               <Insets right="10.0" />
+            </opaqueInsets>
+            </HBox>
+            <VBox>
+                <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </VBox.margin>
+                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="265.0">
+                    <Button fx:id="btnZeigeSpeisekarte" onAction="#zeigeSpeisekarte" prefHeight="25.0" prefWidth="102.0" text="zeige Auswahl" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT">
+                    <Text text="Name:" />
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <Text fx:id="txtSpeisekarteName" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT">
+                    <Text text="Saison:" />
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <Text fx:id="txtSpeisekarteSaison" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT">
+                    <Text text="Pizzen" />
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <Text fx:id="txtSpeisekartePizza" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT">
+                    <Text text="Pasta:" />
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <Text fx:id="txtSpeisekartePasta" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT">
+                    <Text text="Desserts:" />
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <Text fx:id="txtSpeisekarteDessert" />
+                </HBox>
+            </VBox>
+        </VBox>
+        <VBox prefHeight="587.0" prefWidth="264.0">
+            <Text text="neue Speisekarte">
+            <VBox.margin>
+               <Insets bottom="5.0" />
+            </VBox.margin></Text>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="346.0">
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+                <Text text="Name:" wrappingWidth="45.58203125" />
+                <TextField fx:id="inputSpeisekarteName" />
+            </HBox>
+            <HBox prefHeight="17.0" prefWidth="69.0">
+                <padding>
+                    <Insets left="10.0" top="10.0" />
+                </padding>
+                <Text text="Saison:" wrappingWidth="38.58203125" />
+                <TextField fx:id="inputSpeisekarteSaison" prefHeight="25.0" prefWidth="146.0">
+               <HBox.margin>
+                  <Insets left="7.0" />
+               </HBox.margin></TextField>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="69.0">
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+                <Button fx:id="btnAddSpeisekarte" onAction="#addSpeisekarte" prefHeight="25.0" prefWidth="120.0" text="hinzugügen" />
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+            </HBox>
+        </VBox>
+        <VBox prefHeight="587.0" prefWidth="217.0">
+            <Text text="verfügbare Gerichte" wrappingWidth="151.26172256469727" />
+            <ListView fx:id="auswahlGerichte" prefHeight="512.0" prefWidth="217.0">
+                <VBox.margin>
+                    <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                </VBox.margin>
+            </ListView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="198.0">
+                <Button fx:id="btnLadeGerichte" onAction="#ladeGerichte" text="aktualisieren" />
+            </HBox>
+        </VBox>
+    </HBox>
+</AnchorPane>

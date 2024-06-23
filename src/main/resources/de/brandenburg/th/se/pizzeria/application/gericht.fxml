@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.brandenburg.th.se.pizzeria.application.controller.GerichtController">
+    <Line endX="400" startX="400" startY="600" stroke="#0000006b" />
+    <VBox alignment="TOP_CENTER" layoutY="13.0" prefHeight="587.0" prefWidth="402.0" AnchorPane.leftAnchor="0.0">
+      <HBox prefHeight="30.0" prefWidth="402.0">
+         <children>
+               <Text text="Gerichte" textAlignment="CENTER">
+                   <font>
+                       <Font name="System Bold" size="12.0" />
+                   </font>
+               </Text>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="416.0" prefWidth="402.0">
+         <children>
+              <HBox prefHeight="416.0" prefWidth="398.0">
+               <HBox prefHeight="300.0" prefWidth="398.0">
+                  <children>
+                        <VBox prefHeight="404.0" prefWidth="294.0">
+                            <padding>
+                                <Insets bottom="5.0" left="10.0" right="10.0" />
+                            </padding>
+            
+                            <ListView fx:id="auswahlGerichte" prefHeight="359.0" prefWidth="130.0">
+                                <VBox.margin>
+                                    <Insets bottom="2.0" top="2.0" />
+                                </VBox.margin>
+                            </ListView>
+                            <HBox alignment="CENTER_RIGHT" prefHeight="36.0" prefWidth="198.0">
+                                <Button fx:id="btnLadeGerichte" onAction="#ladeGerichte" text="aktualisieren" />
+                                <Button fx:id="btnLoeschGerichte" onAction="#loescheGerichte" text="lösche Auswahl" />
+                            </HBox>
+                        </VBox>
+                     <VBox prefHeight="404.0" prefWidth="172.0">
+                        <children>
+                           <HBox prefHeight="36.0" prefWidth="114.0">
+                              <children>
+                                 <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+                                       <Text fx:id="txtGerichtName" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="153.98047399520874" />
+                                    </children>
+                                 </VBox>
+                              </children>
+                           </HBox>
+                            <HBox prefHeight="36.0" prefWidth="114.0">
+                                <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                        <children>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Typ" />
+                                            <Text fx:id="txtGerichtTyp" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="153.98047399520874" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                            <HBox prefHeight="36.0" prefWidth="114.0">
+                                <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                        <children>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preis" />
+                                            <Text fx:id="txtGerichtPreis" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="153.98047399520874" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                            <HBox prefHeight="36.0" prefWidth="114.0">
+                                <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                        <children>
+                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zutaten" />
+                                            <Text fx:id="txtGerichtZutaten" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="153.98047399520874" />
+                                        </children>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                           <HBox alignment="BOTTOM_RIGHT" prefHeight="41.0" prefWidth="114.0">
+                              <children>
+                                 <Button fx:id="btnGerichtAnzeigen" mnemonicParsing="false" onAction="#zeigeGericht" text="anzeigen">
+                                    <HBox.margin>
+                                       <Insets right="5.0" />
+                                    </HBox.margin>
+                                 </Button>
+                              </children>
+                              <opaqueInsets>
+                                 <Insets right="5.0" />
+                              </opaqueInsets>
+                           </HBox>
+                        </children>
+                     </VBox>
+                     <VBox prefHeight="200.0" prefWidth="100.0" />
+                  </children>
+               </HBox>
+              </HBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="18.0" prefWidth="402.0">
+         <children>
+            <Line endX="399.0" stroke="#0000006b" />
+         </children>
+      </HBox>
+      <HBox prefHeight="171.0" prefWidth="402.0">
+         <children>
+               <VBox prefHeight="134.0" prefWidth="346.0">
+                   <Text text="Neues Gericht" textAlignment="CENTER" wrappingWidth="84.68359375">
+                </Text>
+   
+                      <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="346.0">
+                       <padding>
+                           <Insets left="10.0" />
+                       </padding>
+                       <Text text="Name:" wrappingWidth="45.58203125" />
+                       <TextField fx:id="inputGerichtName" />
+                   </HBox>
+                   <HBox prefHeight="17.0" prefWidth="69.0">
+                       <padding>
+                           <Insets left="10.0" />
+                       </padding>
+                       <Text text="Typ" wrappingWidth="38.58203125" />
+                   </HBox>
+                   <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="346.0">
+                       <padding>
+                           <Insets left="10.0" />
+                       </padding>
+                           <RadioButton fx:id="typPizza" text="typA" />
+                           <RadioButton fx:id="typPasta" text="typB" />
+                           <RadioButton fx:id="typDessert" text="typC" />
+                   </HBox>
+                   <HBox>
+                       <padding>
+                           <Insets left="10.0" />
+                       </padding>
+                       <Text text="ausgewählte Gerichte" />
+                   </HBox>
+                   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="346.0">
+                       <padding>
+                           <Insets left="10.0" />
+                       </padding>
+                       <Text text="Preis:" wrappingWidth="43.767578125" />
+                       <TextField fx:id="inputGerichtPreis" prefHeight="25.0" prefWidth="55.0" />
+                       <Button fx:id="btnAddGericht" onAction="#addGericht" text="hinzufügen" />
+                   </HBox>
+               </VBox>
+         </children>
+      </HBox>
+    </VBox>
+
+    <VBox alignment="TOP_CENTER" layoutY="13.0" prefHeight="587.0" prefWidth="399.0" AnchorPane.leftAnchor="400.0">
+        <VBox prefHeight="396.0" prefWidth="401.0">
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="10.0" />
+            </padding>
+            <Text text="Zutaten" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Text>
+            <ListView fx:id="auswahlZutaten" prefHeight="358.0" prefWidth="401.0">
+                <VBox.margin>
+                    <Insets bottom="2.0" top="2.0" />
+                </VBox.margin>
+            </ListView>
+
+        </VBox>
+        <HBox alignment="TOP_RIGHT" prefHeight="31.0" prefWidth="401.0">
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+            </padding>
+            <Button fx:id="btnLadeZutaten" onAction="#ladeZutaten" text="aktualisiere" />
+            <Button fx:id="btnLoeschZutaten" onAction="#loeschZutaten" text="lösche Auswahl">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+            </Button>
+        </HBox>
+        <HBox>
+            <Line endX="800.0" endY="400.0" startX="400.0" startY="400.0" stroke="#0000003b" />
+        </HBox>
+        <HBox prefHeight="39.0" prefWidth="205.0">
+            <VBox>
+                <padding>
+                    <Insets left="10.0" />
+                </padding>
+                <Text text="Neue Zutat" wrappingWidth="201.99993896484375">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                </Text>
+            </VBox>
+            <VBox>
+                <Text text="Zutat bearbeiten" wrappingWidth="97.9999771118164">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                </Text>
+            </VBox>
+        </HBox>
+        <HBox prefHeight="158.0" prefWidth="401.0">
+            <VBox prefHeight="133.0" prefWidth="223.0">
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="289.0">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <Text text="Name:" wrappingWidth="45.58203125" />
+                    <TextField fx:id="inputZutatName" prefHeight="25.0" prefWidth="112.0" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="346.0">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <Text text="Preis:" wrappingWidth="43.767578125" />
+                    <TextField fx:id="inputZutatPreis" prefHeight="25.0" prefWidth="55.0" />
+                    <Button fx:id="btnAddZutat" onAction="#addZutaten" text="hinzufügen" />
+                </HBox>
+            </VBox>
+            <VBox prefHeight="133.0" prefWidth="215.0">
+                <padding>
+                    <Insets left="10.0" right="10.0" />
+                </padding>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="289.0">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <Text text="Auswahl:" wrappingWidth="68.767578125" />
+                    <Text fx:id="txtEditZutat" textAlignment="RIGHT" wrappingWidth="87.9999885559082" />
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="346.0">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                    <Text text="neuer Preis:" wrappingWidth="104.767578125" />
+                    <TextField fx:id="inputNeuerPreis" prefHeight="25.0" prefWidth="55.0" />
+                </HBox>
+                <HBox alignment="TOP_RIGHT">
+                    <VBox alignment="TOP_RIGHT" prefHeight="51.0" prefWidth="96.0">
+                        <Button fx:id="btnAuswahlZutat" onAction="#editZutatA" prefHeight="25.0" prefWidth="73.0" text="auswählen" />
+                        <padding>
+                            <Insets right="10.0" />
+                        </padding>
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </VBox>
+                    <VBox alignment="TOP_RIGHT" prefHeight="51.0" prefWidth="99.0">
+                        <Button fx:id="btnEditZutat" onAction="#editZutatB" prefHeight="25.0" prefWidth="73.0" text="setze Preis" />
+                        <padding>
+                            <Insets right="10.0" />
+                        </padding>
+                    </VBox>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
+    <VBox alignment="TOP_CENTER" prefHeight="614.0" prefWidth="1.0" AnchorPane.leftAnchor="800.0">
+        <Line endX="800" startX="800" startY="600" stroke="#0000006b" />
+    </VBox>
+    <Line endX="800" endY="600" startY="600" stroke="#0000006b" />
+</AnchorPane>
